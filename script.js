@@ -11,7 +11,7 @@ let startScreen = document.querySelector(".start-screen");
 let startButton = document.getElementById("start-button");
 let questionCount;
 let scoreCount = 0;
-let count = 10;
+let count = 5; // Reducción del tiempo de respuesta a 5 segundos
 let countdown;
 let quizArray = [];
 
@@ -24,7 +24,11 @@ const colors = [
     { name: "Naranja", code: "#FFA500" },
     { name: "Morado", code: "#800080" },
     { name: "Rosado", code: "#FFC0CB" },
-    { name: "Cyan", code: "#00FFFF" }
+    { name: "Cyan", code: "#00FFFF" },
+    // Agregar más colores para aumentar la dificultad
+    { name: "Blanco", code: "#FFFFFF" },
+    { name: "Negro", code: "#000000" },
+    { name: "Gris", code: "#808080" }
 ];
 
 // Función para generar un valor aleatorio de un array
@@ -32,9 +36,14 @@ const generateRandomValue = array => array[Math.floor(Math.random() * array.leng
 
 // Función para poblar el arreglo de preguntas del quiz
 const populateQuiz = () => {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) { // Aumento en la cantidad de preguntas a 10
         let question = generateRandomValue(colors);
-        let options = [generateRandomValue(colors), generateRandomValue(colors), generateRandomValue(colors), question];
+        let options = [];
+        // Agregar más opciones incorrectas para aumentar la dificultad
+        for (let j = 0; j < 5; j++) {
+            options.push(generateRandomValue(colors));
+        }
+        options.push(question); // Agregar la respuesta correcta como opción
         options.sort(() => Math.random() - 0.5);
         quizArray.push({ correct: question, options: options });
     }
@@ -53,7 +62,7 @@ const displayNextQuestion = () => {
 
         displayQuiz(questionCount);
 
-        count = 10;
+        count = 5; // Restablecer el tiempo de respuesta a 5 segundos
         clearInterval(countdown);
 
         displayTimer();
@@ -94,6 +103,7 @@ const createQuiz = () => {
                 <button class="option-div" data-option="${question.options[1].name}" style="background-color: ${question.options[1].code}" onclick="checkAnswer(this)"></button>
                 <button class="option-div" data-option="${question.options[2].name}" style="background-color: ${question.options[2].code}" onclick="checkAnswer(this)"></button>
                 <button class="option-div" data-option="${question.options[3].name}" style="background-color: ${question.options[3].code}" onclick="checkAnswer(this)"></button>
+                <button class="option-div" data-option="${question.options[4].name}" style="background-color: ${question.options[4].code}" onclick="checkAnswer(this)"></button>
             </div>
         `;
         quizContainer.appendChild(div);
@@ -133,7 +143,7 @@ const restartGame = () => {
     questionCount = 0;
     scoreCount = 0;
     clearInterval(countdown);
-    count = 10;
+    count = 5; // Restablecer el tiempo de respuesta a 5 segundos
     displayContainer.classList.add("hide");
     scoreContainer.classList.add("hide");
     startScreen.classList.remove("hide");

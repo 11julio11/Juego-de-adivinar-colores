@@ -8,15 +8,33 @@
 /* Estilos generales */
 body {
     font-family: "Glitch Goblin", sans-serif;
-    color: #19084e;
+    color: #ffffff;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: #9873fe;
-    padding: 20px;
+    padding: 2vw; /* Utilizando unidades vw para el relleno */
 }
 
 button {
+    width: 12vw; /* Utilizando unidades vw para el ancho de los botones */
+    height: 12vw; /* Utilizando unidades vw para la altura de los botones */
     border: none;
     outline: none;
     cursor: pointer;
+    margin-bottom: auto;
+    color: #000000;
+    font-size: 1.5vw; /* Utilizando unidades vw para el tamaño de fuente */
+    align-items: center;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    box-shadow: 0 0.5vw 0.75vw rgba(0, 0, 0, 0.1); /* Utilizando unidades vw para la sombra */
+}
+
+button:hover {
+    background-color: #11d781;
+    color: #ffffff;
 }
 
 .flex-space {
@@ -26,13 +44,14 @@ button {
 }
 
 .header {
-    padding: 0.5em;
-    border-bottom: 1px solid #c8c5d1;
+    padding: 1vw; /* Utilizando unidades vw para el relleno */
+    border-bottom: 0.2vw solid #ffffff;
 }
 
 .title,
 .timer {
     font-weight: 600;
+    font-size: 2vw; /* Utilizando unidades vw para el tamaño de fuente */
 }
 
 /* Estilos específicos */
@@ -41,35 +60,36 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: rgba(233, 13, 13, 0.9);
     width: 90%;
-    max-width: 37em;
-    padding: 3em 2em;
-    border-radius: 0.8em;
-    box-shadow: 0 1em 3em rgba(37, 22, 80, 0.3);
+    max-width: 40em;
+    padding: 3vw; /* Utilizando unidades vw para el relleno */
+    border-radius: 2vw; /* Utilizando unidades vw para el radio de borde */
+    box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.2); /* Utilizando unidades vw para la sombra */
 }
 
 .question-color {
-    font-size: 1.5em;
+    font-size: 2vw; /* Utilizando unidades vw para el tamaño de fuente */
     text-align: center;
 }
 
 .container {
-    margin-bottom: 1em;
+    margin-bottom: 2vw; /* Utilizando unidades vw para el margen inferior */
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1vw; /* Utilizando unidades vw para el espacio entre botones */
+    align-items: center;
 }
 
 .option-div {
-    width: 100px; /* Ajusta el tamaño de los botones según sea necesario */
-    height: 100px; /* Ajusta el tamaño de los botones según sea necesario */
-    margin: 0.3em;
-    border-radius: 0.5em;
+    width: 12vw; /* Utilizando unidades vw para el tamaño de los botones */
+    height: 12vw; /* Utilizando unidades vw para el tamaño de los botones */
+    margin: 0.3vw; /* Utilizando unidades vw para el margen */
+    border-radius: 50%;
+    font-size: 1.5vw; /* Utilizando unidades vw para el tamaño de fuente */
 }
 
 .option-div:disabled {
@@ -77,13 +97,49 @@ button {
 }
 
 .correct {
-    background-color: green;
+    background-color: #11d781;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #ff6347;
 }
 
 .hide {
     display: none;
+}
+
+/* Media Query para ajustar estilos en pantallas más pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 5vw; /* Ajuste del relleno en pantallas más pequeñas */
+    }
+
+    button {
+        width: 15vw; /* Ajuste del ancho de los botones en pantallas más pequeñas */
+        height: 15vw; /* Ajuste de la altura de los botones en pantallas más pequeñas */
+        font-size: 2vw; /* Ajuste del tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .header {
+        padding: 2vw; /* Ajuste del relleno en pantallas más pequeñas */
+    }
+
+    .title,
+    .timer {
+        font-size: 3vw; /* Ajuste del tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .question-color {
+        font-size: 4vw; /* Ajuste del tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .container {
+        margin-bottom: 3vw; /* Ajuste del margen inferior en pantallas más pequeñas */
+    }
+
+    .option-div {
+        width: 20vw; /* Ajuste del tamaño de los botones en pantallas más pequeñas */
+        height: 20vw; /* Ajuste del tamaño de los botones en pantallas más pequeñas */
+        font-size: 2.5vw; /* Ajuste del tamaño de fuente en pantallas más pequeñas */
+    }
 }
