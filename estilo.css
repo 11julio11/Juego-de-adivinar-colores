@@ -1,0 +1,89 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: "Glitch Goblin", sans-serif;
+    color: #19084e;
+    background-color: #9873fe;
+    padding: 20px;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    padding: 0.5em;
+    border-bottom: 1px solid #c8c5d1;
+}
+
+.title,
+.timer {
+    font-weight: 600;
+}
+
+/* Estilos específicos */
+#display-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 37em;
+    padding: 3em 2em;
+    border-radius: 0.8em;
+    box-shadow: 0 1em 3em rgba(37, 22, 80, 0.3);
+}
+
+.question-color {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.container {
+    margin-bottom: 1em;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    place-items: center;
+}
+
+.option-div {
+    width: 100px; /* Ajusta el tamaño de los botones según sea necesario */
+    height: 100px; /* Ajusta el tamaño de los botones según sea necesario */
+    margin: 0.3em;
+    border-radius: 0.5em;
+}
+
+.option-div:disabled {
+    cursor: not-allowed;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+.hide {
+    display: none;
+}

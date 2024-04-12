@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Glitch+Goblin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Juegos de adivinar colores</title>
+</head>
+<body>
+    <div id="display-container" class="hide">
+        <div class="header">
+            <div class="title">
+                <p>Color Guessing Game</p>
+            </div>
+            <div class="timer"></div>
+        </div>
+        <div class="container"></div>
+        <div class="flex-space">
+            <div class="number-of-count"></div>
+            <button id="next-button" class="hide">Next</button>
+        </div>
+    </div>
+
+    <div class="start-screen">
+        <button id="start-button">Start</button>
+    </div>
+
+    <div class="score-container hide">
+        <div id="user-score"></div>
+        <button id="restart">Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
